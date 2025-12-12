@@ -15,7 +15,6 @@ dotenv.load_dotenv()
 
 # NOTE: do NOT import langchain_groq at top-level to avoid name collision
 
-
 # -----------------------------------------------------
 # STREAMLIT CONFIG  (must be first)
 # -----------------------------------------------------
@@ -26,7 +25,6 @@ EXPORT_DIR = "exports"
 
 os.makedirs(CHAT_DIR, exist_ok=True)
 os.makedirs(EXPORT_DIR, exist_ok=True)
-
 
 # -----------------------------------------------------
 # SAFE IMPORT helper to avoid local module shadowing external 'groq' package
@@ -100,15 +98,11 @@ if "api" in params:
         st.write(json.dumps({"error": str(e)}))
 
     st.stop()
-
-
 # -----------------------------------------------------
 # HELPERS
 # -----------------------------------------------------
 def list_chats():
     return sorted([f for f in os.listdir(CHAT_DIR) if f.endswith(".json")])
-
-
 def load_chat(file):
     try:
         with open(os.path.join(CHAT_DIR, file), "r", encoding="utf-8") as f:
@@ -165,7 +159,6 @@ def export_pdf(data, title):
     pdf.output(path)
     return path
 
-
 # -----------------------------------------------------
 # SESSION INIT (FIXED ORDER)
 # -----------------------------------------------------
@@ -192,7 +185,6 @@ if "chain" not in st.session_state:
         st.session_state.chain = default_prompt | llm | StrOutputParser()
     else:
         st.session_state.chain = None
-
 
 # -----------------------------------------------------
 # SIDEBAR — CHAT LIST / OPTIONS
@@ -276,7 +268,6 @@ for m in st.session_state.messages:
 with st.form("chat", clear_on_submit=True):
     q = st.text_input("Type your message...")
     send = st.form_submit_button("Send")
-
 
 # -----------------------------------------------------
 # SEND MESSAGE
