@@ -239,7 +239,7 @@ if submitted and user_q:
         try:
             answer = st.session_state.llm_chain.invoke({"question": user_q})
         except Exception as e:
-            answer = f"Error: {e}"
+            answer = f"⚠️ Error: Cannot connect to Ollama. Please ensure Ollama is running on localhost:11434. Details: {str(e)}"
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
 
