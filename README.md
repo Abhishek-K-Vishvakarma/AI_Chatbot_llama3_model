@@ -24,12 +24,16 @@ This app lets you chat with a completely offline AI model like Llama 3, running 
 
 
 📁 Project Structure
-project-folder/
-│-- app.py
-│-- requirements.txt
-│-- .gitignore
-│-- README.md
-└── (venv)   # Not included in Git
+chatbot-project/
+│
+├─ app.py                 # Main Streamlit app
+├─ requirements.txt       # Python dependencies
+├─ README.md              # Project description + instructions
+├─ chats/                 # Saved chat JSON files
+├─ exports/               # Exported PDF/TXT/JSON files
+├─ .gitignore             # Ignore venv, __pycache__, exports, etc.
+└─ venv/                  # Local virtual environment (ignored)
+
 
 
 🛠️ Installation
@@ -66,3 +70,22 @@ streamlit run app.py
 Then open the browser link shown in terminal (usually):
 
 http://localhost:8501
+
+
+# Abhishek AI - Multi Chatbot with Ollama
+
+This is a local AI chatbot using **LangChain** and **Ollama** with Streamlit frontend.  
+Supports multiple chats, exporting, renaming, deleting chats, and API usage.
+
+## Features
+- Local AI chatbot using `llama3` model.
+- Multiple chat history with sidebar.
+- Rename, export (PDF/TXT/JSON), delete chats.
+- API support: `http://localhost:8501/?api=your+question`.
+- Input form auto clears after submit.
+
+## Setup
+1. Clone the repo:
+```bash
+git clone <your-repo-url>
+cd chatbot-project
