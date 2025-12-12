@@ -22,9 +22,9 @@ os.makedirs(EXPORT_DIR, exist_ok=True)
 # -------------------------
 # API support: ?api=question
 # -------------------------
-params = st.experimental_get_query_params()
+params = st.query_params
 if "api" in params:
-    raw_q = params.get("api", [""])[0]
+    raw_q = params.get("api", "")
     question = unquote_plus(raw_q) if isinstance(raw_q, str) else raw_q
     if not question:
         st.write(json.dumps({"error": "empty question"}))
@@ -128,7 +128,7 @@ if st.sidebar.button("➕ New Chat"):
     st.session_state.current_chat = nf
     st.session_state.messages = []
     st.session_state.show_menu = None
-    st.experimental_rerun()
+    st.rerun()
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("All Chats")
@@ -143,7 +143,7 @@ for file in chat_files:
             st.session_state.current_chat = file
             st.session_state.messages = data.get("messages", [])
             st.session_state.show_menu = None
-            st.experimental_rerun()
+            st.rerun()
 
     with c2:
         if st.button("⋮", key=f"menu_{file}"):
@@ -157,7 +157,7 @@ for file in chat_files:
             data["title"] = new_name
             save_chat(file, data)
             st.session_state.show_menu = None
-            st.experimental_rerun()
+            st.rerun()
 
         if st.sidebar.button("Export TXT", key=f"export_txt_{file}"):
             p = export_chat_txt(data, new_name)
@@ -184,7 +184,7 @@ for file in chat_files:
                 st.session_state.current_chat = None
                 st.session_state.messages = []
             st.session_state.show_menu = None
-            st.experimental_rerun()
+            st.rerun()
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("API usage: `http://localhost:8501/?api=your+question`")
@@ -209,7 +209,7 @@ with col_side:
         st.session_state.messages = []
         current_data["messages"] = []
         save_chat(st.session_state.current_chat, current_data)
-        st.experimental_rerun()
+        st.rerun()
 
 # display chat messages
 for m in st.session_state.messages:
@@ -245,4 +245,4 @@ if submitted and user_q:
 
     current_data["messages"] = st.session_state.messages
     save_chat(st.session_state.current_chat, current_data)
-    st.experimental_rerun()
+    st.rerun()
