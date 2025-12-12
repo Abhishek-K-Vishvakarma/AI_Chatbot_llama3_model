@@ -72,9 +72,6 @@ else:
     llm = None
 
 
-# -----------------------------------------------------
-# API MODE (?api=hello)
-# -----------------------------------------------------
 params = st.experimental_get_query_params()
 
 if "api" in params:
