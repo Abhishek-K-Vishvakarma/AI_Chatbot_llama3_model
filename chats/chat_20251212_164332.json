@@ -8,6 +8,14 @@
         {
             "role": "assistant",
             "content": "I'm doing well, thanks for asking. I'm a large language model, so I don't have feelings or emotions like humans do, but I'm always ready to help and assist with any questions or tasks you may have. How about you? Is there anything I can help you with today?"
+        },
+        {
+            "role": "user",
+            "content": "what is your name"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm an AI assistant, and I don't have a personal name. I'm here to help answer your questions and provide information on a wide range of topics. You can think of me as a helpful companion or a virtual assistant, but I don't have a specific name. How can I assist you today?"
         }
     ]
 }
