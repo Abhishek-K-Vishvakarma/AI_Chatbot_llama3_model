@@ -16,6 +16,14 @@
         {
             "role": "assistant",
             "content": "I'm an AI assistant, and I don't have a personal name. I'm here to help answer your questions and provide information on a wide range of topics. You can think of me as a helpful companion or a virtual assistant, but I don't have a specific name. How can I assist you today?"
+        },
+        {
+            "role": "user",
+            "content": "Who are you"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm an artificial intelligence (AI) designed to assist and communicate with users like you. My purpose is to provide helpful and accurate information, answer questions, and engage in conversations on a wide range of topics. I'm a machine learning model, which means I've been trained on a vast amount of text data to generate human-like responses.\n\nI don't have a personal identity, emotions, or consciousness like a human would. I exist solely to provide assistance, answer questions, and help users like you find the information they need. I'm constantly learning and improving my responses based on the interactions I have with users, so please bear with me if I make any mistakes!\n\nWhat can I help you with today? Do you have a specific question, topic, or problem you'd like to discuss? I'm all ears (or rather, all text)!"
         }
     ]
 }
