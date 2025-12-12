@@ -25,7 +25,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # Initialize OpenAI LLM
 llm = ChatOpenAI(
-    model="gpt-4o-mini",
+    model=os.getenv("LLM_MODEL"),
     api_key=os.getenv("OPENAI_API_KEY")
 )
 
